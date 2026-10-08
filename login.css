@@ -1,0 +1,108 @@
+body.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	min-height: 100vh;
+	height: auto;
+	padding: 48px 50vw 48px 0;
+	background: #fff;
+}
+
+body.login::after {
+	content: "";
+	position: fixed;
+	inset: 0 0 0 50%;
+	background: #f0f0f1 url("assets/brindle-login-photo.jpg?v=0.3.0") center / cover no-repeat;
+}
+
+.login #login {
+	box-sizing: border-box;
+	width: 320px;
+	max-width: calc(100% - 64px);
+	margin: 0;
+	padding: 0;
+}
+
+.login .wp-login-logo a {
+	width: 200px;
+	height: 46px;
+	margin: 0 auto 36px;
+	background: url("assets/brindle-logo-dark.svg") center / contain no-repeat;
+}
+
+.login #login form {
+	display: flow-root;
+	margin-top: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	overflow: visible;
+}
+
+.login label {
+	color: #50575e;
+}
+
+.login form .input {
+	min-height: 46px;
+	padding: 8px 12px;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+	font-size: 18px;
+	background: #fff;
+}
+
+.login .button-primary {
+	min-height: 38px;
+	padding: 0 16px;
+	border-color: #1d2327;
+	border-radius: 3px;
+	background: #1d2327;
+	color: #fff;
+}
+
+.login .button-primary:hover,
+.login .button-primary:focus {
+	border-color: #323b42;
+	background: #323b42;
+	color: #fff;
+}
+
+.login #nav,
+.login #backtoblog {
+	margin: 24px 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+.login #nav a,
+.login #backtoblog a,
+.login .privacy-policy-link {
+	color: #50575e;
+	text-decoration: underline;
+}
+
+.login .privacy-policy-page-link {
+	margin: 32px 0 0;
+}
+
+.login .language-switcher {
+	margin: 24px 0 0;
+}
+
+@media screen and (max-width: 782px) {
+	body.login {
+		padding: 32px 24px;
+	}
+
+	body.login::after {
+		display: none;
+	}
+
+	.login #login {
+		max-width: 100%;
+	}
+}
