@@ -1,0 +1,102 @@
+.brindle-helper-toolbar {
+	--brindle-toolbar-offset: 160px;
+	--brindle-brand-padding: 24px;
+	--brindle-logo-display: block;
+	--brindle-mark-display: none;
+}
+
+#wpadminbar #wp-admin-bar-popup-maker .pum-notifications-marker {
+	display: none !important;
+}
+
+.brindle-helper-toolbar #wpadminbar {
+	left: var(--brindle-toolbar-offset);
+	width: calc(100% - var(--brindle-toolbar-offset));
+}
+
+.brindle-helper-toolbar .brindle-helper-brand {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: var(--brindle-toolbar-offset);
+	height: 32px;
+	padding: 0 var(--brindle-brand-padding);
+	background: #1d2327;
+}
+
+.brindle-helper-brand img {
+	width: 100%;
+	max-width: 112px;
+	height: auto;
+}
+
+.brindle-helper-toolbar .brindle-helper-brand:hover {
+	background: #1d2327;
+}
+
+.brindle-helper-brand .brindle-helper-logo {
+	display: var(--brindle-logo-display);
+}
+
+.brindle-helper-brand .brindle-helper-mark {
+	display: var(--brindle-mark-display);
+	max-width: 16px;
+}
+
+.brindle-helper-folded {
+	--brindle-toolbar-offset: 36px;
+	--brindle-brand-padding: 10px;
+	--brindle-logo-display: none;
+	--brindle-mark-display: block;
+}
+
+@media screen and (min-width: 783px) {
+	.brindle-helper-toolbar #wp-toolbar,
+	.brindle-helper-toolbar #wp-admin-bar-root-default {
+		display: flex;
+	}
+
+	.brindle-helper-toolbar #wp-admin-bar-root-default {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.brindle-helper-toolbar #wp-admin-bar-root-default > li {
+		min-width: 0;
+	}
+
+	.brindle-helper-toolbar #wp-admin-bar-root-default > li > .ab-item {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.brindle-helper-toolbar #wp-admin-bar-top-secondary {
+		flex-shrink: 0;
+	}
+}
+
+@media screen and (min-width: 783px) and (max-width: 960px) {
+	.brindle-helper-auto-fold {
+		--brindle-toolbar-offset: 36px;
+		--brindle-brand-padding: 10px;
+		--brindle-logo-display: none;
+		--brindle-mark-display: block;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.brindle-helper-toolbar #wpadminbar {
+		left: 0;
+		width: 100%;
+	}
+
+	.brindle-helper-toolbar .brindle-helper-brand {
+		display: none;
+	}
+}
