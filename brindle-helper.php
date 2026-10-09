@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Brindle Dashboard Helper
  * Description: Dashboard customization and client roles for Brindle sites.
- * Version: 0.3.2
+ * Version: 0.4
  * Author: Brindle Digital
  * Text Domain: brindle-helper
  */
@@ -14,7 +14,7 @@ function brindle_helper_update_checker() {
 	if ( ! $checker ) {
 		require_once __DIR__ . '/vendor/plugin-update-checker/plugin-update-checker.php';
 		$checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
-			'https://raw.githubusercontent.com/jonschr/brindle-helper/master/update.json',
+			'https://raw.githubusercontent.com/BrindleDigital/brindle-dashboard-helper/master/update.json',
 			__FILE__,
 			'brindle-helper'
 		);
@@ -385,7 +385,7 @@ function brindle_helper_sidebar_brand() {
 add_action( 'wp_before_admin_bar_render', 'brindle_helper_sidebar_brand', 1000 );
 
 function brindle_helper_admin_styles() {
-	wp_enqueue_style( 'brindle-helper-admin', plugins_url( 'admin.css', __FILE__ ), array(), '0.3.2' );
+	wp_enqueue_style( 'brindle-helper-admin', plugins_url( 'admin.css', __FILE__ ), array(), '0.4' );
 }
 add_action( 'admin_enqueue_scripts', 'brindle_helper_admin_styles' );
 
@@ -406,7 +406,7 @@ add_filter( 'body_class', 'brindle_helper_front_toolbar_classes' );
 
 function brindle_helper_front_toolbar_styles() {
 	if ( is_admin_bar_showing() ) {
-		wp_enqueue_style( 'brindle-helper-front-toolbar', plugins_url( 'front-toolbar.css', __FILE__ ), array( 'admin-bar' ), '0.3.2' );
+		wp_enqueue_style( 'brindle-helper-front-toolbar', plugins_url( 'front-toolbar.css', __FILE__ ), array( 'admin-bar' ), '0.4' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'brindle_helper_front_toolbar_styles' );
